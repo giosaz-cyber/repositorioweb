@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a las Expresiones Regulares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .example {
+            background: #f9f9f9;
+            border-left: 4px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .example code {
+            background: #fff;
+        }
+        .form-container {
+            margin: 20px 0;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container select {
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+        .text-example {
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introducción a las Expresiones Regulares</h1>
+        <p>Las expresiones regulares, a menudo abreviadas como <strong>regex</strong>, son secuencias de caracteres que definen un patrón de búsqueda. Se utilizan para buscar, coincidir y manipular texto en funciones de procesamiento de texto. Las expresiones regulares son muy poderosas y se pueden utilizar en una variedad de lenguajes de programación y herramientas para realizar tareas como validación de datos, búsqueda y reemplazo de cadenas, y extracción de información.</p>
+        
+        <h2>Componentes Básicos de las Expresiones Regulares</h2>
+        
+        <h3>Literales</h3>
+        <p>Coinciden con caracteres específicos. Por ejemplo, <code>a</code> coincide con la letra "a".</p>
+        
+        <h3>Metacaracteres</h3>
+        <p>Tienen significados especiales. Algunos ejemplos incluyen:</p>
+        <div class="example">
+            <p><code>.</code> : Coincide con cualquier carácter excepto una nueva línea.</p>
+            <p><code>^</code> : Coincide con el inicio de una línea.</p>
+            <p><code>$</code> : Coincide con el final de una línea.</p>
+            <p><code>\d</code> : Coincide con cualquier dígito (equivalente a <code>[0-9]</code>).</p>
+            <p><code>\w</code> : Coincide con cualquier carácter de palabra (letras, dígitos y guiones bajos).</p>
+        </div>
+
+        <h3>Cuantificadores</h3>
+        <p>Especifican cuántas veces debe aparecer el patrón.</p>
+        <div class="example">
+            <p><code>*</code> : Coincide con cero o más repeticiones del patrón anterior.</p>
+            <p><code>+</code> : Coincide con una o más repeticiones del patrón anterior.</p>
+            <p><code>?</code> : Coincide con cero o una repetición del patrón anterior.</p>
+        </div>
+        
+        <h3>Clases de caracteres</h3>
+        <p>Un conjunto de caracteres que puede coincidir con uno cualquiera en la posición dada.</p>
+        <div class="example">
+            <p><code>[abc]</code> : Coincide con "a", "b" o "c".</p>
+            <p><code>[a-z]</code> : Coincide con cualquier letra minúscula.</p>
+        </div>
+        
+        <h3>Grupos y Capturas</h3>
+        <div class="example">
+            <p><code>(abc)</code> : Coincide con "abc" y captura el texto coincidente.</p>
+            <p><code>(?:abc)</code> : Coincide con "abc" sin capturarlo.</p>
+        </div>
+
+        <h3>Alternancia</h3>
+        <p><code>a|b</code> : Coincide con "a" o "b".</p>
+        
+        <h3>Escapado</h3>
+        <p><code>\.</code> : Coincide con un punto literal (ya que <code>.</code> es un metacarácter).</p>
+
+        <div class="form-container">
+            <label for="font-size">Selecciona el tamaño de la fuente:</label>
+            <select id="font-size">
+                <option value="16px">16px</option>
+                <option value="18px">18px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+                <option value="28px">28px</option>
+            </select>
+
+            <label for="font-family">Selecciona la fuente:</label>
+            <select id="font-family">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Georgia', serif">Georgia</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="'Verdana', sans-serif">Verdana</option>
+            </select>
+        </div>
+
+        <div class="text-example" id="text-example">
+            <p>Las expresiones regulares son una poderosa herramienta para la manipulación de texto.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('font-size').addEventListener('change', function() {
+            document.getElementById('text-example').style.fontSize = this.value;
+        });
+
+        document.getElementById('font-family').addEventListener('change', function() {
+            document.getElementById('text-example').style.fontFamily = this.value;
+        });
+    </script>
+</body>
+</html>
+

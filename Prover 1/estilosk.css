@@ -1,0 +1,46 @@
+body {
+    background-image: url(img/kab.png);
+}
+h1 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    color: purple;
+    text-shadow: 2px 2px 5px black;
+}
+h2 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    color: purple;
+    text-shadow: 2px 2px 5px black;
+}
+p {
+    text-align: center;
+    font-family: serif;
+    color: rgb(179, 84, 179);
+    font-size: x-large;
+    text-shadow: 2px 2px 5px black;
+  
+}
+li {
+    text-align: leftx   ;
+    font-size: x-large;
+    color: blue;
+    text-shadow: purple;
+
+}
+.cont {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }

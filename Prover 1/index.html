@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTIENDE TU CANCIÓN</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+        .header img {
+            width: 150px;
+            height: auto;
+        }
+        .header h1 {
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            margin-left: 20px;
+            position: relative;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+        }
+        .nav-item a:hover {
+            background-color: #ddd;
+        }
+        .nav-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            flex-direction: column;
+        }
+        .nav-item:hover .nav-content {
+            display: flex;
+        }
+        .search-bar {
+            margin-left: 20px;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+        .container img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .artist-info, .album-info {
+            max-width: 500px;
+        }
+        .artist-info h3, .album-info h4 {
+            margin: 0 0 10px 0;
+        }
+        .artist-info p, .album-info p, .album-info ul {
+            margin: 0;
+            color: #555;
+        }
+        .text-block {
+            position: relative;
+            bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 600px;
+            background-color: #f9f9f9;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form input[type="radio"] {
+            margin-right: 10px;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+        .alert-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+        }
+        .alert-box button {
+            margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .alert-box button:hover {
+            background-color: #555;
+        }
+        .alert-box audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="img/descarga.png" alt="playlist">
+        <h1>ENTIENDE TU CANCIÓN</h1>
+        <div class="nav">
+            <div class="nav-item">
+                <a href="#">Secciones</a>
+                <div class="nav-content">
+                    <div class="section"><a href="index.html">Artistas</a></div>
+                    <div class="section"><a href="#">Pistas de audio</a></div>
+                    <div class="section"><a href="#">EDITS</a></div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>TOP ARTISTAS MÁS BUSCADOS</h2>
+        <div class="container">
+            <a href="kanye.html">
+                <img src="img/kanye.jpg" alt="kanye" class="image">
+            </a>
+            <div class="artist-info">
+                <h3>Kanye West</h3>
+                <p>Kanye Omari West es un rapero, cantante, productor y diseñador de moda estadounidense. Es uno de los artistas de hip hop más influyentes y polarizadores del siglo XXI.</p>
+            </div>
+        </div>
+        <div class="container">
+            <a href="TheWeeknd.html">
+                <img src="img/theww.jpg" alt="the weeknd" class="image">
+            </a>
+            <div class="artist-info">
+                <h3>The Weeknd</h3>
+                <p>Abel Makkonen Tesfaye, conocido profesionalmente como The Weeknd, es un cantante, compositor y productor canadiense. Es conocido por su estilo musical ecléctico y su voz característica.</p>
+            </div>
+        </div>
+        <div class="container">
+            <a href="travis.html">
+                <img src="img/trav.jpeg" alt="travis" class="image">
+            </a>
+            <div class="artist-info">
+                <h3>Travis Scott</h3>
+                <p>Jacques Berman Webster II, conocido profesionalmente como Travis Scott, es un rapero, cantante, compositor y productor discográfico estadounidense. Es famoso por su estilo único y sus energéticas actuaciones en vivo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>ÁLBUMES MÁS BUSCADOS</h2>
+        <div class="container">
+            <a href="graduation.html">
+                <img src="img/gra.jpg" alt="graduation">
+            </a>
+            <div class="album-info">
+                <div class="text-block">
+                    <h4>GRADUATION</h4>
+                    <p>Kanye West</p>
+                </div>
+                <ul>
+                    <li>Good Morning</li>
+                    <li>Champion</li>
+                    <li>Stronger</li>
+                    <li>I Wonder</li>
+                    <li>Good Life</li>
+                </ul>
+                <audio controls>
+                    <source src="audi/Kanye West - Flashing Lights ft. Dwele (128 kbps).mp3" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+        <div class="container">
+            <a href="BBTM.HTML">
+                <img src="img/be.jpg" alt="BBTM">
+            </a>
+            <div class="album-info">
+                <div class="text-block">
+                    <h4>BBTM</h4>
+                    <p>The Weeknd</p>
+                </div>
+                <ul>
+                    <li>Can't Feel My Face</li>
+                    <li>The Hills</li>
+                    <li>Often</li>
+                    <li>Acquainted</li>
+                    <li>Shameless</li>
+                </ul>
+                <audio controls>
+                    <source src="audi/The Hills.mp3" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+        <div class="container">
+            <a href="utopia.html">
+                <img src="img/uto.jpg" alt="utopia">
+            </a>
+            <div class="album-info">
+                <div class="text-block">
+                    <h4>UTOPIA</h4>
+                    <p>Travis Scott</p>
+                </div>
+                <ul>
+                    <li>HIGHEST IN THE ROOM</li>
+                    <li>FRANCHISE</li>
+                    <li>Escape Plan</li>
+                    <li>Butterfly Effect</li>
+                    <li>SICKO MODE</li>
+                </ul>
+                <audio controls>
+                    <source src="audi/SICKO MODE.mp3" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Formulario de Contacto</h2>
+        <form id="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="phone">Número de Celular:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="country">País:</label>
+            <select id="country" name="country">
+                <option value="" disabled selected>Selecciona tu país</option>
+                <option value="argentina">Argentina</option>
+                <option value="chile">Chile</option>
+                <option value="colombia">Colombia</option>
+                <option value="mexico">México</option>
+                <option value="peru">Perú</option>
+            </select>
+
+            <label>Artista Favorito:</label>
+            <input type="radio" id="kanye" name="artist" value="Kanye West">
+            <label for="kanye">Kanye West</label>
+            <input type="radio" id="weeknd" name="artist" value="The Weeknd">
+            <label for="weeknd">The Weeknd</label>
+            <input type="radio" id="travis" name="artist" value="Travis Scott">
+            <label for="travis">Travis Scott</label>
+
+            <label for="favorite-song">Canción Favorita del Artista:</label>
+            <input type="text" id="favorite-song" name="favorite-song">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Contacto: contacto@entiendetucancion.com</p>
+        <p>Síguenos en redes sociales:
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://twitter.com" target="_blank">Twitter</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </p>
+    </div>
+
+    <div id="alert-box" class="alert-box">
+        <div id="alert-content">
+            <!-- El contenido de la alerta se añadirá dinámicamente con JS -->
+        </div>
+        <button onclick="closeAlert()">Cerrar</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const country = document.getElementById('country').value;
+            const artist = document.querySelector('input[name="artist"]:checked');
+            const favoriteSong = document.getElementById('favorite-song').value;
+
+            if (!name || !phone || !email || !country || !artist || !favoriteSong) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            const artistValue = artist.value;
+            const audioSource = {
+                'Kanye West': 'audi/Kanye West - Flashing Lights ft. Dwele (128 kbps).mp3',
+                'The Weeknd': 'audi/The Hills.mp3',
+                'Travis Scott': 'audi/SICKO MODE.mp3'
+            };
+
+            const audioUrl = audioSource[artistValue] || '';
+
+            const alertContent = `
+                <h2>Información del Formulario</h2>
+                <p>Nombre: ${name}</p>
+                <p>Número de Celular: ${phone}</p>
+                <p>Correo Electrónico: ${email}</p>
+                <p>País: ${country}</p>
+                <p>Artista Favorito: ${artistValue}</p>
+                <p>Canción Favorita: ${favoriteSong}</p>
+                <audio controls>
+                    <source src="${audioUrl}" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            `;
+
+            document.getElementById('alert-content').innerHTML = alertContent;
+            document.getElementById('alert-box').style.display = 'block';
+        });
+
+        function closeAlert() {
+            document.getElementById('alert-box').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
